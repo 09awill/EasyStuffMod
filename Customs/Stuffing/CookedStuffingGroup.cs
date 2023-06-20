@@ -3,11 +3,7 @@ using KitchenData;
 using KitchenEasyStuff;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace EasyStuff.Customs
@@ -17,14 +13,12 @@ namespace EasyStuff.Customs
         public override string UniqueNameID => "CookedStuffingGroup";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("Stuffing");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Medium;
         public override string ColourBlindTag => "Stuff";
-        public override bool SplitByCopying => true;
-        public override float SplitSpeed => 2.5f;
         public override Item SplitSubItem => Mod.StuffingPortion;
         public override List<Item> SplitDepletedItems => new List<Item> { Mod.StuffingPortion };
         public override int SplitCount => 2;
+        public override float SplitSpeed => 2.5f;
 
         public override void OnRegister(Item gameDataObject)
         {
